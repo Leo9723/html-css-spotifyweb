@@ -23,21 +23,21 @@ header {
 
 .sidebar {
     height: calc(100vh - 50px);
-    background-color: #141922;
+    background-color: black;
 }
 
 main {
     height: calc(100vh - 50px);
     width: calc(100vw - 30px);
-    background-color: black;
+    background-color: #141922;
 }
 
 footer {
     height: 50px;
     width: 100vw;
-    background-color: lightseagreen;
     position: fixed;
     z-index: 1;
+    background-color: #282828;
     display: flex;
 }
 
@@ -48,7 +48,6 @@ footer {
 .main-container {
     width: 85%;
     margin: 0 auto;
-    background-color: aqua;
 }
 
 main {
@@ -57,7 +56,7 @@ main {
 
 .full-sidebar {
     height: calc(100vh - 50px);
-    width: 80px;
+    width: 120px;
     background-color: black;
     display: none;
 }
@@ -94,22 +93,39 @@ header button {
 
 .row-100-70 {
     width: 100%;
-    background-color: blue;
     height: 80px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    color: #7d7f84;
 }
 
 .nav-element {
     margin: 10px 10px;
+    font-size: xx-small;
 }
 
 .music-container {
     text-align: center;
-    width: 130px;
-    background-color: blueviolet;
+    width: 30vw;
     margin-bottom: 30px;
+}
+
+.album-title, .music-name {
+    color: white;
+}
+
+.album-title {
+    font-weight: bold;
+    font-size: small;
+}
+
+.album-subtitle {
+    font-size: xx-small;
+}
+
+.album-subtitle, .music-details {
+    color: #7d7f84;
 }
 
 .recently-played .music-container {
@@ -117,13 +133,18 @@ header button {
 }
 
 .user .music-container, .popular .music-container, .recently-played .music-container {
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .album-img img {
     width: 100%;
     flex-grow: inherit;
+    position: relative;
+}
+
+.recently-played .album-img {
+    background-color: #0000007a;
 }
 
 .recently-played, .user, .popular {
@@ -135,8 +156,6 @@ header button {
 .col-33 {
     height: 50px;
     width: calc(100% / 3);
-    background-color: red;
-    border: 1px solid black;
 }
 
 .played-music {
@@ -192,6 +211,7 @@ header button {
 
 .footer-icon-right {
     width: 10%;
+    margin-right: 5px;
 }
 
 .vol {
@@ -200,6 +220,9 @@ header button {
 
 .time {
     width: 10%;
+    scale: 0.5;
+    color: #797c81;
+    margin: 0px 10px;
 }
 
 .timebar {
@@ -228,6 +251,7 @@ header button {
 
 .sidebar-svg-ico {
     scale: 0.7;
+    filter: invert(50%);
 }
 
 .download-ico {
@@ -258,7 +282,90 @@ header button {
     color: white;
     scale: 0.6;
 }
+
+h2 {
+    color: white;
+    margin: 15px 0px;
+}
+
+h4 {
+    color: #797c81;
+    font-weight: normal;
+    font-size: xx-small;
+    margin: 15px 0px;
+}
+
+.music-information {
+    scale: 0.65;
+}
+
+.margin {
+    filter: none;
+}
+
+.radius-img img {
+    border-radius: 50%;
+}
+
+.white-hover:hover {
+    color: white;
+}
+
+.padding-hover {
+    transition: all 0.25s;
+}
+
+.padding-hover:hover {
+    padding: 7px 30px;
+}
+
+footer .vol {
+    margin: 0px 5px;
+}
+
+.green-bar {
+    margin: 0 auto;
+    background-color: green;
+    border-radius: 2px;
+    margin-top: 5px;
+    transition: all;
+    transition-delay: 0.25s;
+}
+
+.green-bar-hover:hover .green-bar{
+    animation: greenbar 0.25s linear;
+    width: 80%;
+    height: 5px;
+}
+
+.margin-transition {
+    transition: all 0.25s;
+}
+
+.margin-transition:hover {
+    margin-left: 10px;
+}
+@keyframes greenbar {
+    0% {width: 0%;
+        height: 5px;
+    }
+    25% {width: 20%;
+        height: 5px;
+    }
+    50% {width: 40%;
+        height: 5px;
+    }
+    75% {width: 60%;
+        height: 5px;
+    }
+    100% {width: 80%;
+        height: 5px;
+    }
+}
 @media screen and (min-width: 481px) {
+    .music-container {
+        width: 15vw;
+    }
     .mobile-sidebar {
         display: none;
     }
@@ -266,7 +373,7 @@ header button {
         display: block;
     }
     main, header {
-        width: calc(100vw - 80px);
+        width: calc(100vw - 120px);
     }
     .full-logo, .full-sidebar-ico, .mid-sidebar-elements, h3, .playlist-creation {
         color: white;
@@ -279,9 +386,73 @@ header button {
     .mid-sidebar-elements {
         overflow-y: auto;
     }
+    .sidebar-svg-ico, .download-ico, .profile {
+        width: 20%;
+    }
+
+    .margin {
+        margin-top: 10px;
+    }
+    .ico-name {
+        font-size: xx-small;
+        margin-left: 10px;
+    }
+    .ico-container {
+        display: flex;
+        align-items: center;
+        color: #797c81;
+    }
+    .ico-container .margin {
+        color: white;
+    }
+   .playlist-creation, .mid-sidebar-elements {
+        margin-left: 5px;
+        font-size: small;
+    }
+    h3 {
+        margin: 10px 5px;
+        font-size: small;
+    }
+    .playlist-creation {
+        color: #797c81;
+        align-items: center;
+        margin: 0px 5px;
+    }
+    .playlist-creation i {
+        background-color: #797c81;
+        color: black;
+        padding: 2px;
+        margin-right: 5px;
+    }
+    .playlist-creation div {
+        font-size: xx-small;
+    }
+    .mid-sidebar-elements {
+        font-size: xx-small;
+        color: #797c81;
+    }
+    .mid-sidebar-elements div {
+        margin-top: 10px;
+    }
+    .small .ico-name {
+        font-size: 10px;
+    }
+    .ico-user {
+        font-size: small;
+        margin-left: 10px;
+        color: white;
+        margin: 10px 10px;
+    }
+    hr {
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (min-width: 769px) {
+    .music-container {
+        width: 12vw;
+    }
     .row-100-40 {
         width: 40%;
     }
