@@ -10,6 +10,10 @@ header {
     width: calc(100vw - 30px);
     background-color: grey;
     position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .sidebar {
@@ -20,7 +24,7 @@ header {
 
 main {
     height: calc(100vh - 50px);
-    width: calc(100vw - 30px);
+    width: 100%;
     background-color: burlywood;
 }
 
@@ -29,8 +33,96 @@ footer {
     width: 100vw;
     background-color: lightseagreen;
     position: fixed;
+    z-index: 1;
 }
 
 .sidebar-main-container {
     display: flex;
+}
+
+.main-container {
+    width: 85%;
+    margin: 0 auto;
+    height: 1000px;
+    background-color: aqua;
+}
+
+main {
+    overflow-y: auto;
+}
+
+.full-sidebar {
+    height: calc(100vh - 50px);
+    width: 70px;
+    background-color: black;
+    display: none;
+}
+
+.mobile-sidebar {
+    height: calc(100vh - 50px);
+    width: 30px;
+    background-color: black;
+}
+
+.sidebar-ico, .logo {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.mobile-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header button {
+    margin-right: 20px;
+}
+
+.main-container {
+    padding-top: 50px;
+}
+
+.row-100-70 {
+    width: 100%;
+    background-color: blue;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-element {
+    margin: 10px 10px;
+}
+
+.music-container {
+    text-align: center;
+    width: 130px;
+    background-color: blueviolet;
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+.recently-played .music-container {
+    margin-bottom: 30px;
+}
+
+.user .music-container, .popular .music-container, .recently-played .music-container {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.album-img img {
+    width: 100%;
+}
+
+.recently-played, .user, .popular {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.user, .popular {
+
 }
