@@ -140,17 +140,42 @@ header button {
 .album-img img {
     width: 100%;
     flex-grow: inherit;
-    position: relative;
 }
 
 .recently-played .album-img {
-    background-color: #0000007a;
+    position: relative;
 }
 
 .recently-played, .user, .popular {
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
+}
+
+.play-music {
+    color: white;
+    scale: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -25%);
+}
+
+.bkg-grey {
+    background-color: #000000bb;
+    height: 97%;
+    width: 100%;
+    position: absolute;
+    box-shadow: 0px 0px 20px rgb(37, 37, 37);
+}
+
+.evanescent {
+    opacity: 0;
+    transition: all 0.25s;
+}
+
+.evanescent:hover{
+    opacity: 1;
 }
 
 .col-33 {
@@ -185,6 +210,11 @@ header button {
 .music-details, .music-name {
     font-size: xx-small;
     margin-left: 10px;
+}
+
+.music-details:hover {
+    text-decoration: underline;
+    color: white;
 }
 
 .flex {
@@ -345,6 +375,95 @@ footer .vol {
 .margin-transition:hover {
     margin-left: 10px;
 }
+
+.white-hover:hover i {
+    background-color: white;
+}
+
+.vol {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: #5a5a5a;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 2px;
+  }
+
+  .vol::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 5px;
+    background: #c1c1c1;
+    cursor: pointer;
+  }
+  
+  .vol::-moz-range-thumb {
+    width: 5px;
+    height: 5px;
+    background: #c1c1c1;
+    cursor: pointer;
+    border: none;
+    opacity: 0;
+  }
+  .vol::-moz-range-progress {
+    background-color: #c1c1c1;
+    height: 5px;
+    border-radius: 2px;
+  }
+  
+  .timebar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: #5a5a5a;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 2px;
+  }
+
+  .timebar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 5px;
+    background: #c1c1c1;
+    cursor: pointer;
+  }
+  
+  .timebar::-moz-range-thumb {
+    width: 5px;
+    height: 5px;
+    background: #c1c1c1;
+    cursor: pointer;
+    border: none;
+    transition: all 0.1s;
+  }
+  .timebar::-moz-range-progress {
+    background-color: #c1c1c1;
+    height: 5px;
+    border-radius: 2px;
+    transition: all 0.1s;
+  }
+
+  .time {
+    position: relative;
+    bottom: 7px;
+  }
+
+  .track-control:hover .timebar::-moz-range-progress {
+    background-color: green;
+  }
+
+  .track-control:hover .timebar::-moz-range-thumb {
+    background: green;
+    height: 10px;
+    width: 10px;
+    border: 2px solid white;
+  }
 @keyframes greenbar {
     0% {width: 0%;
         height: 5px;
@@ -460,5 +579,18 @@ footer .vol {
     .foalder-icons {
         align-items: center;
         flex-direction: row;
+    }
+    .controllers {
+        width: 200px;
+    }
+    .vol {
+        width: 0%;
+        transition: all 0.5s;
+    }
+    .controllers {
+        justify-content: end;
+    }
+    .controllers:hover .vol {
+        width: 100%;
     }
 }
