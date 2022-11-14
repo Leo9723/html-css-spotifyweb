@@ -11,13 +11,11 @@ header {
     background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     z-index: 1;
-    display: flex;
     justify-content: end;
     align-items: center;
 }
 
 .header-main-container {
-    display: flex;
     flex-direction: column;
 }
 
@@ -38,10 +36,9 @@ footer {
     position: fixed;
     z-index: 1;
     background-color: #282828;
-    display: flex;
 }
 
-.sidebar-main-container {
+.sidebar-main-container, header, .header-main-container, footer, .full-sidebar, .mobile-sidebar, .row-100-70, .recently-played, .user, .popular, .play-music, .col-30, .col-70, .flex, .foalder-icons, .controllers, .track-control, .played-music {
     display: flex;
 }
 
@@ -58,7 +55,6 @@ main {
     height: calc(100vh - 50px);
     width: 120px;
     background-color: black;
-    display: none;
 }
 
 .mobile-sidebar {
@@ -73,7 +69,6 @@ main {
 }
 
 .mobile-sidebar {
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -92,9 +87,7 @@ header button {
 }
 
 .row-100-70 {
-    width: 100%;
     height: 80px;
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     color: #7d7f84;
@@ -137,9 +130,8 @@ header button {
     margin-left: 10px;
 }
 
-.album-img img {
+.album-img img, .row-100-70, .bkg-grey, .row-100-40, .row-100, .vol, .timebar {
     width: 100%;
-    flex-grow: inherit;
 }
 
 .recently-played .album-img {
@@ -147,7 +139,6 @@ header button {
 }
 
 .recently-played, .user, .popular {
-    display: flex;
     flex-wrap: wrap;
     justify-content: start;
 }
@@ -163,8 +154,7 @@ header button {
 
 .bkg-grey {
     background-color: #000000bb;
-    height: 97%;
-    width: 100%;
+    height: 97.5%;
     position: absolute;
     box-shadow: 0px 0px 20px rgb(37, 37, 37);
 }
@@ -185,13 +175,11 @@ header button {
 
 .played-music {
     width: 70px;
-    display: flex;
     height: 100%;
 }
 
 .col-30 {
     width: 30%;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -199,7 +187,6 @@ header button {
 
 .col-70 {
     width: 70%;
-    display: flex;
     align-items: center;
 }
 
@@ -217,24 +204,18 @@ header button {
     color: white;
 }
 
-.flex {
-    display: flex;
-}
-
 .flex-right {
     justify-content: end;
 }
 
 .foalder-icons {
     margin-left: 10px;
-    display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .controllers {
     width: 100px;
-    display: flex;
     align-items: center;
     justify-content: space-between;
 }
@@ -259,10 +240,6 @@ header button {
     width: 70%;
 }
 
-.row-100-40, .row-100 {
-    width: 100%;
-}
-
 .row-100 {
     justify-content: center;
 }
@@ -273,7 +250,6 @@ header button {
 
 .track-control {
     height: 100%;
-    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -346,7 +322,9 @@ h4 {
 }
 
 .padding-hover:hover {
-    padding: 7px 30px;
+    padding: 10px 30px;
+    margin-right: 10px;
+    font-size: 15px;
 }
 
 footer .vol {
@@ -382,7 +360,6 @@ footer .vol {
 
 .vol {
     -webkit-appearance: none;
-    width: 100%;
     height: 5px;
     background: #5a5a5a;
     outline: none;
@@ -416,7 +393,6 @@ footer .vol {
   
   .timebar {
     -webkit-appearance: none;
-    width: 100%;
     height: 5px;
     background: #5a5a5a;
     outline: none;
@@ -463,6 +439,14 @@ footer .vol {
     height: 10px;
     width: 10px;
     border: 2px solid white;
+  }
+
+  .music-container {
+    transition: all 0.25s;
+  }
+
+  .music-container:hover {
+    scale: 1.1;
   }
 @keyframes greenbar {
     0% {width: 0%;
@@ -592,5 +576,12 @@ footer .vol {
     }
     .controllers:hover .vol {
         width: 100%;
+    }
+    .played-music {
+        width: 120px;
+        margin-left: 10px;
+    }
+    .music-details, .music-name {
+        font-size: small;
     }
 }
