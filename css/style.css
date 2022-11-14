@@ -5,6 +5,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    overflow-y: hidden;
+}
+
 header {
     height: 50px;
     width: calc(100vw - 30px);
@@ -38,8 +42,13 @@ footer {
     background-color: #282828;
 }
 
-.sidebar-main-container, header, .header-main-container, footer, .full-sidebar, .mobile-sidebar, .row-100-70, .recently-played, .user, .popular, .play-music, .col-30, .col-70, .flex, .foalder-icons, .controllers, .track-control, .played-music {
+.sidebar-main-container, header, .header-main-container, footer, .mobile-sidebar, .row-100-70, .recently-played, .user, .popular, .play-music, .col-30, .col-70, .flex, .foalder-icons, .controllers, .track-control, .played-music {
     display: flex;
+}
+
+.full-sidebar {
+    display: none;
+    height: calc(100% - 50px);
 }
 
 .main-container {
@@ -203,9 +212,9 @@ header button {
     margin-left: 10px;
 }
 
-.played-music:hover{
-    text-decoration: underline;
+.music-details:hover{
     color: white;
+    text-decoration: underline;
 }
 
 .flex-right {
@@ -315,6 +324,10 @@ h4 {
 
 .radius-img img {
     border-radius: 50%;
+}
+
+.white-hover {
+    transition: all 0.05s;
 }
 
 .white-hover:hover {
@@ -491,7 +504,8 @@ footer .vol {
         justify-content: space-between;
     }
     .mid-sidebar-elements {
-        overflow-y: auto;
+        overflow-y: scroll;
+        height: 40vh;
     }
     .sidebar-svg-ico, .download-ico, .profile {
         width: 20%;
@@ -546,6 +560,11 @@ footer .vol {
     .small .ico-name {
         font-size: 10px;
     }
+
+    .end {
+        overflow-y: hidden;
+    }
+
     .ico-user {
         font-size: small;
         margin-left: 10px;
@@ -587,7 +606,12 @@ footer .vol {
         width: 120px;
         margin-left: 10px;
     }
-    .music-details, .music-name {
+    .music-name {
         font-size: small;
+        margin-bottom: 10px;
+    }
+    .music-details {
+        position: relative;
+        bottom: 5px;
     }
 }
