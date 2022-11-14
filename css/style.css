@@ -68,6 +68,10 @@ main {
     margin-bottom: 5px;
 }
 
+.sidebar-ico, header button, .nav-element, .evanescent, .center-icon, .footer-icon-right {
+    cursor: pointer;
+}
+
 .mobile-sidebar {
     flex-direction: column;
     justify-content: space-between;
@@ -199,7 +203,7 @@ header button {
     margin-left: 10px;
 }
 
-.music-details:hover {
+.played-music:hover{
     text-decoration: underline;
     color: white;
 }
@@ -520,6 +524,7 @@ footer .vol {
         color: #797c81;
         align-items: center;
         margin: 0px 5px;
+        cursor: pointer;
     }
     .playlist-creation i {
         background-color: #797c81;
@@ -536,6 +541,7 @@ footer .vol {
     }
     .mid-sidebar-elements div {
         margin-top: 10px;
+        cursor: pointer;
     }
     .small .ico-name {
         font-size: 10px;
